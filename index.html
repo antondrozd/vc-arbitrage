@@ -12,12 +12,84 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>VS Arbitrage</title>
   </head>
   <body>
-
-    <div class="container"></div>
+    <section>
+      <div class="container my-3">
+        <div class="row justify-content-center">
+          <div class="col-10 col-md-8 text-center">
+            <h1 class="mb-4">VS Arbitrage</h1>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-12 col-md-10 text-center mb-4 mb-lg-5">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+              consequuntur repellendus ex quam, voluptas aperiam pariatur,
+              deleniti, reprehenderit facere nobis nihil fugit? Velit eligendi
+              nisi dolorem, id, maxime autem minima?
+              <a href="#">Learn&nbsp;more</a>
+            </p>
+          </div>
+        </div>
+        <div class="row align-items-center mb-md-4 mb-lg-5">
+          <div class="col-md-auto text-center">
+            <label for="raise" class="mb-md-0">Raise From:</label>
+          </div>
+          <div class="col-md mb-3 mb-md-0">
+            <select class="selectpicker" data-width="100%" id="raise">
+              <option value="SF">San Francisco</option>
+              <option value="2">Another option 2</option>
+              <option value="3">Another option 3</option>
+              <option value="4">Another option 4</option>
+              <option value="5">Another option 5</option>
+            </select>
+          </div>
+          <div class="col-md-auto text-center">
+            <label for="spend" class="mb-md-0">Build Company In:</label>
+          </div>
+          <div class="col-md mb-3 mb-md-0">
+            <select class="selectpicker" data-width="100%" id="spend">
+              <option value="Philadelphia">Philadelphia</option>
+              <option value="2">Another option 2</option>
+              <option value="3">Another option 3</option>
+              <option value="4">Another option 4</option>
+              <option value="5">Another option 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-auto text-center mb-md-3 mb-lg-0">
+            <label for="count" class="mb-md-0">How much are you raising:</label>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="1 000 000"
+                min="0"
+                id="count"
+              />
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-12 col-md-6 mt-4 mt-lg-5">
+            <button type="button" class="btn btn-block btn-outline-success btn-md-lg">
+              Calculate
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -34,6 +106,7 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
