@@ -16,6 +16,6 @@ export default function renderResult() {
   $('.raise-from').text(raiseFrom);
   $('.spend-in').text(spendIn);
 
-  $target.removeClass('d-none').addClass('d-block');
+  $target.removeClass('d-none').addClass('d-flex');
   scrollTo($target, 500);
 }
