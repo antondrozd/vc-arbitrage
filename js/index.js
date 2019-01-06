@@ -30,6 +30,7 @@ $(document).ready(() => {
   });
 
   activateNavbarBehavior();
-  new BarChart({ maxBarHeight: 175, animation: 'fadeIn' }).renderBars();
+  
+  window.barChart = new BarChart({ maxBarHeight: 175, animation: 'fadeIn' });
   new WOW().init();
 });

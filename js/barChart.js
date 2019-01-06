@@ -6,18 +6,16 @@ export default class BarChart {
     animationStep = 0.2,
     animationDelay = 0
   } = {}) {
-    this._$bars = $('.bar');
     this._maxValue;
     this._maxBarHeight = maxBarHeight;
     this.colors = colors;
     this.animation = animation;
     this.animationStep = animationStep;
     this.animationDelay = animationDelay;
-
-    this.init();
   }
 
   init() {
+    this._$bars = $('.bar');
     this._setMaxValue();
   }
 
@@ -33,19 +31,18 @@ export default class BarChart {
     this._maxValue = Math.max(...values);
   }
 
-  _getFormattedValue(value) {
+  getFormattedValue(value) {
     const numberOfDecimalPlaces = value.toString().includes('.')
       ? value
           .toString()
           .split('.')
-          .pop().length
+          .pop().length > 1
       : 0;
 
-    return numberOfDecimalPlaces ? value : value.toFixed(1);
+    return numberOfDecimalPlaces ? value.toFixed(2) : value.toFixed(1);
   }
 
   renderBars() {
-
     this._$bars.each((index, bar) => {
       const $bar = $(bar);
 
@@ -66,7 +63,7 @@ export default class BarChart {
         backgroundColor: this.colors[colorIndex]
       });
 
-      const valueToDisplay = this._getFormattedValue(value);
+      const valueToDisplay = this.getFormattedValue(value);
 
       $bar.text(`${valueToDisplay}x`);
 
