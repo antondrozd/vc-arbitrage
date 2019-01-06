@@ -24,4 +24,6 @@ export default function activateNavbarBehavior() {
       }
     });
   });
+
+  $('.navbar-brand').on('click', () => location.reload());
 }
