@@ -4,7 +4,9 @@ export default function activateNavbarBehavior() {
   const $nav = $('nav');
   const navHeight = $nav.outerHeight();
 
-  function handleScroll() {
+  $(window).on('scroll', function() {
+    scrollPosition = $(this).scrollTop();
+
     $sections.each(function() {
       const top = $(this).offset().top - navHeight;
       const bottom = top + $(this).outerHeight();
@@ -15,9 +17,7 @@ export default function activateNavbarBehavior() {
         $nav.find(`a[href="#${sectionId}"]`).addClass('active');
       }
     });
-  }
-
-  $(window).on('scroll', handleScroll);
+  });
 
   $('.navbar-brand').on('click', () => location.reload());
 }
