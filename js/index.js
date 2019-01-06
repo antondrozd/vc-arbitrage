@@ -4,16 +4,11 @@ import addCitiesDataToFields from './addCitiesDataToFields.js';
 import initSelectPicker from './selectpicker.js';
 import renderResult from './renderResult.js';
 
+import { cities } from '../data/cities.js';
+
 $(document).ready(() => {
-  fetch('https://antondrozd.github.io/vc-arbitrage/data/cities.json')
-    .then(res => res.json())
-    .then(data => {
-      addCitiesDataToFields(data);
-    })
-    .catch(err => {
-      console.error(err);
-    })
-    .then(initSelectPicker);
+  addCitiesDataToFields(cities);
+  initSelectPicker();
 
   $('#sum').on('focus', function() {
     $(this).select();
@@ -30,7 +25,7 @@ $(document).ready(() => {
   });
 
   activateNavbarBehavior();
-  
+
   window.barChart = new BarChart({ maxBarHeight: 175, animation: 'fadeIn' });
   new WOW().init();
 });
