@@ -5,18 +5,6 @@ export default function activateNavbarBehavior() {
   const navHeight = $nav.outerHeight();
 
   function handleScroll() {
-    if ($(this).scrollTop() < scrollPosition) {
-      $(window).off('scroll', handleScroll);
-      $('.navbar').fadeIn(500, () => $(window).on('scroll', handleScroll));
-
-      scrollPosition = $(this).scrollTop();
-    } else {
-      $(window).off('scroll', handleScroll);
-      $('.navbar').fadeOut(500, () => $(window).on('scroll', handleScroll));
-
-      scrollPosition = $(this).scrollTop();
-    }
-
     $sections.each(function() {
       const top = $(this).offset().top - navHeight;
       const bottom = top + $(this).outerHeight();
