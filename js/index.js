@@ -1,3 +1,4 @@
+import activateNavbarBehavior from './navbar.js';
 import BarChart from './barChart.js';
 import addCitiesDataToFields from './addCitiesDataToFields.js';
 import initSelectPicker from './selectpicker.js';
@@ -28,6 +29,7 @@ $(document).ready(() => {
     renderResult($('#result'));
   });
 
+  activateNavbarBehavior();
   new BarChart({ maxBarHeight: 175, animation: 'fadeIn' }).renderBars();
   new WOW().init();
 });

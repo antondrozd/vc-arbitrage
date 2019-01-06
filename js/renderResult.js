@@ -18,4 +18,6 @@ export default function renderResult() {
 
   $target.removeClass('d-none').addClass('d-flex');
   scrollTo($target, 500);
+
+  $('#resultLink').removeClass('disabled');
 }

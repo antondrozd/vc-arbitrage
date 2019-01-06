@@ -1,9 +1,20 @@
 .fullscreen {
   display: flex;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+}
+
+.fullscreen .fullscreen-content-top {
+  align-self: flex-start;
+}
+
+.fullscreen .fullscreen-content-center {
+  align-self: center;
+}
+
+.fullscreen .fullscreen-content-bottom {
+  align-self: flex-end;
 }
 
 .bar-chart .card {
