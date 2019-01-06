@@ -78,7 +78,7 @@ export default class BarChart {
           .addClass(`animated ${animationType} wow`)
           .attr('data-wow-delay', `${delay}s`);
 
-        new WOW().init();
+        new WOW({ mobile: false }).init();
       }
     });
   }
