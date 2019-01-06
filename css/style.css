@@ -1,0 +1,29 @@
+.bar-chart .card {
+  border: none;
+  min-width: 10rem;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2rem;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.5);
+}
+
+.bar::after {
+  content: '';
+  position: absolute;
+  left: -10%;
+  bottom: 0;
+  width: 120%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 7px;
+}
