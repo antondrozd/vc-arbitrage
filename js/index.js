@@ -4,7 +4,7 @@ import initSelectPicker from './selectpicker.js';
 import renderResult from './renderResult.js';
 
 $(document).ready(() => {
-  fetch('../data/cities.json')
+  fetch('https://antondrozd.github.io/vc-arbitrage/data/cities.json')
     .then(res => res.json())
     .then(data => {
       addCitiesDataToFields(data);
