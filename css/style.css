@@ -1,3 +1,7 @@
+.first-section {
+  padding-top: 5rem;
+}
+
 .fullscreen {
   display: flex;
   flex-wrap: wrap;

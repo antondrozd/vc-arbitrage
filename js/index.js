@@ -7,6 +7,7 @@ import renderResult from './renderResult.js';
 import { cities } from '../data/cities.js';
 
 $(document).ready(() => {
+  activateNavbarBehavior();
   addCitiesDataToFields(cities);
   initSelectPicker();
 
@@ -24,8 +25,8 @@ $(document).ready(() => {
     renderResult($('#result'));
   });
 
-  activateNavbarBehavior();
-
-  window.barChart = new BarChart({ maxBarHeight: 175, animation: 'fadeIn' });
-  new WOW().init();
+  window.barChart = new BarChart({
+    maxBarHeight: 175,
+    animation: 'fadeIn'
+  });
 });

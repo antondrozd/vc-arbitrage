@@ -43,11 +43,11 @@ export default class BarChart {
   }
 
   renderBars() {
+    const maxBarHeight = this._maxBarHeight;
+    const maxValue = this._maxValue;
+
     this._$bars.each((index, bar) => {
       const $bar = $(bar);
-
-      const maxBarHeight = this._maxBarHeight;
-      const maxValue = this._maxValue;
       const value = Number($bar.data('bar-value'));
 
       const height = (maxBarHeight / maxValue) * value;
@@ -67,7 +67,7 @@ export default class BarChart {
 
       $bar.text(`${valueToDisplay}x`);
 
-      if (this.animation) {
+      if (this.animation && WOW) {
         const animationType = this.animation;
         const delay = (
           index * this.animationStep +
@@ -77,6 +77,8 @@ export default class BarChart {
         $bar
           .addClass(`animated ${animationType} wow`)
           .attr('data-wow-delay', `${delay}s`);
+
+        new WOW().init();
       }
     });
   }
