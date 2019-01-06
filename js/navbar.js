@@ -4,12 +4,16 @@ export default function activateNavbarBehavior() {
   const $nav = $('nav');
   const navHeight = $nav.outerHeight();
 
-  $(window).on('scroll', function() {
+  function handleScroll() {
     if ($(this).scrollTop() < scrollPosition) {
-      $('.navbar').fadeIn();
+      $(window).off('scroll', handleScroll);
+      $('.navbar').fadeIn(500, () => $(window).on('scroll', handleScroll));
+
       scrollPosition = $(this).scrollTop();
     } else {
-      $('.navbar').fadeOut();
+      $(window).off('scroll', handleScroll);
+      $('.navbar').fadeOut(500, () => $(window).on('scroll', handleScroll));
+
       scrollPosition = $(this).scrollTop();
     }
 
@@ -23,7 +27,9 @@ export default function activateNavbarBehavior() {
         $nav.find(`a[href="#${sectionId}"]`).addClass('active');
       }
     });
-  });
+  }
+
+  $(window).on('scroll', handleScroll);
 
   $('.navbar-brand').on('click', () => location.reload());
 }
