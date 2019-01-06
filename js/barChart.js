@@ -45,37 +45,36 @@ export default class BarChart {
   }
 
   renderBars() {
-    const _this = this;
 
-    this._$bars.each(function(index) {
-      const $bar = $(this);
+    this._$bars.each((index, bar) => {
+      const $bar = $(bar);
 
-      const maxBarHeight = _this._maxBarHeight;
-      const maxValue = _this._maxValue;
+      const maxBarHeight = this._maxBarHeight;
+      const maxValue = this._maxValue;
       const value = Number($bar.data('bar-value'));
 
       const height = (maxBarHeight / maxValue) * value;
       const marginTop = maxBarHeight - height;
 
-      const colorIndex = _this.colors[index]
+      const colorIndex = this.colors[index]
         ? index
-        : index % _this.colors.length;
+        : index % this.colors.length;
 
       $bar.css({
         height,
         marginTop,
-        backgroundColor: _this.colors[colorIndex]
+        backgroundColor: this.colors[colorIndex]
       });
 
-      const valueToDisplay = _this._getFormattedValue(value);
+      const valueToDisplay = this._getFormattedValue(value);
 
       $bar.text(`${valueToDisplay}x`);
 
-      if (_this.animation) {
-        const animationType = _this.animation;
+      if (this.animation) {
+        const animationType = this.animation;
         const delay = (
-          index * _this.animationStep +
-          _this.animationDelay
+          index * this.animationStep +
+          this.animationDelay
         ).toFixed(2);
 
         $bar
