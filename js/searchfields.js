@@ -2,7 +2,7 @@ export default function activateSearchfieldsBehavior() {
   const firstValue = $('select.cities-searchfield > option:first-child').val();
   const lastValue = $('select.cities-searchfield > option:last-child').val();
 
-  $('select.cities-searchfield').on('change', event => {
+  $('select.cities-searchfield').on('changed.bs.select', event => {
     const currentId = event.target.id;
     const value = event.target.value;
     const $anotherField = $(`select.cities-searchfield:not(#${currentId})`);
@@ -15,6 +15,8 @@ export default function activateSearchfieldsBehavior() {
         $anotherField.selectpicker('val', firstValue);
       }
     }
+
+    $('.dropup').removeClass('dropup');
   });
 
   $('select.cities-searchfield#spend').selectpicker('val', lastValue);
