@@ -1,5 +1,5 @@
 import getPurchasingPowerValue from './purchasingPower.js';
-import { scrollTo } from './helpers.js';
+import { scrollTo, USDFormatter } from './helpers.js';
 
 function getFieldsData() {
   const raiseFrom = $(`#raise option[value="${$('#raise').val()}"]`).text();
@@ -18,10 +18,10 @@ export default function renderResult() {
     purchasingPowerSum / sum
   );
 
-  $('.raise-sum').text(`$${sum}`);
+  $('.raise-sum').text(USDFormatter(sum));
   $('.raise-from').text(raiseFrom);
   $('.spend-in').text(spendIn);
-  $('#purchasingPowerSum').text(`$${purchasingPowerSum}`);
+  $('#purchasingPowerSum').text(USDFormatter(purchasingPowerSum));
   $('#resultBar').attr('data-bar-value', purchasingPowerCoef);
 
   window.barChart.init();
