@@ -21,6 +21,16 @@
   align-self: flex-end;
 }
 
+.navbar-brand {
+  font-family: 'Righteous', cursive;
+  font-size: 1rem;
+}
+
+svg.logo {
+  width: 2.5rem;
+  fill: #fff;
+}
+
 .bar-chart .card {
   border: none;
   min-width: 10rem;
