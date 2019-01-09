@@ -104,16 +104,6 @@
     $('#sum').on('focus', function() {
       $(this).select();
     });
-
-    $('#getResult').on('submit', function(event) {
-      // event.preventDefault();
-
-      const $sum = $('#sum');
-
-      if (!$sum.val()) return $sum.focus();
-
-      // $(this).submit();
-    });
   }
 
   function activateSearchfieldsBehavior() {
