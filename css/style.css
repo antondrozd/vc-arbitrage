@@ -95,9 +95,16 @@ svg.logo {
 
 .separator {
   position: relative;
-  min-height: 3px;
-  margin: 0 auto;
+  width: 75%;
+  min-height: 1px;
+  margin: 3rem auto;
   background-color: #000;
   border-radius: 5px;
   opacity: 0.2;
+}
+
+@media (min-width: 1024px) {
+  .separator {
+    width: 50%;
+  }
 }
