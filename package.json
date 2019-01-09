@@ -1,0 +1,8 @@
+{
+  "name": "vc-arbitrage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/antondrozd/vc-arbitrage.git",
+  "author": "Anton Drozd <anton.drozd.95@gmail.com>",
+  "license": "MIT"
+}

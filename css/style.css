@@ -21,6 +21,10 @@
   align-self: flex-end;
 }
 
+.navbar a:not([href]) {
+  cursor: default;
+}
+
 .navbar-brand {
   font-family: 'Righteous', cursive;
   font-size: 1rem;
@@ -29,6 +33,11 @@
 svg.logo {
   width: 2.5rem;
   fill: #fff;
+}
+
+.cities-searchfield .btn {
+  background-color: transparent;
+  border: 1px solid #ced4da;
 }
 
 .bar-chart .card {

@@ -84,10 +84,8 @@
           VC Arbitrage</a
         >
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="/result.html">Result</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active">Result</a></li>
         </ul>
       </nav>
     </header>
@@ -95,18 +93,100 @@
     <main>
       <section class="first-section fullscreen align-items-center">
         <div class="container py-3">
-          <div class="row justify-content-center">
-            <div class="col-10 col-md-8 text-center">
-              <h1 class="mb-4">VC Arbitrage</h1>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-12 col-md-10 text-center mb-4 mb-lg-5">
+          <div class="row mb-3">
+            <div class="col-12 text-center">
               <p>
-                Measure your purchasing power leverage when raising money in one
-                city and spending it in another. <a href="#">Learn&nbsp;more</a>
+                <span class="d-block mb-2"
+                  >The <span class="font-weight-bold raise-sum"></span> you
+                  raise in
+                  <span class="font-weight-bold raise-from"></span> will buy
+                  you</span
+                >
+
+                <span class="d-block display-4" id="purchasingPowerSum"></span>
+                <span class="d-block mt-2">
+                  of purchasing power in
+                  <span class="font-weight-bold spend-in"></span>!</span
+                >
               </p>
             </div>
           </div>
+          <div class="row justify-content-center mb-5 bar-chart">
+            <div class="col-12 col-lg">
+              <div class="card text-center">
+                <div class="bar card-img-top mb-2" data-bar-value="1.7"></div>
+                <div class="card-body">
+                  <h4 class="card-title">HEADCOUNT</h4>
+                  <p class="card-text">
+                    70% of spending<br />Avg Salary for Engineer Roles<br />170k
+                    vs 100k
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto align-self-center text-center">
+              <span class="font-weight-bold display-4">+</span>
+            </div>
+            <div class="col-12 col-lg">
+              <div class="card text-center">
+                <div class="bar card-img-top mb-2" data-bar-value="1.3"></div>
+                <div class="card-body">
+                  <h4 class="card-title">RENT</h4>
+                  <p class="card-text">
+                    10% of spending<br />Avg const per dedicated coworking
+                    desk<br />
+                    $260 vs $220
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-md-100"></div>
+            <div class="col-auto align-self-center text-center">
+              <span class="font-weight-bold display-4">+</span>
+            </div>
+            <div class="col-12 col-lg">
+              <div class="card text-center">
+                <div class="bar card-img-top mb-2" data-bar-value="1"></div>
+                <div class="card-body">
+                  <h4 class="card-title">OTHER</h4>
+                  <p class="card-text">
+                    20% of spending<br />Some things costs the same anywhere<br />$1
+                    vs $1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto align-self-center text-center">
+              <span class="font-weight-bold display-4">=</span>
+            </div>
+            <div class="col-12 col-lg">
+              <div class="card text-center">
+                <div
+                  class="bar card-img-top mb-2"
+                  data-bar-value="1.52"
+                  id="resultBar"
+                ></div>
+                <div class="card-body">
+                  <h4 class="card-title">PURCHASING POWER</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <p>
+                Data research by Crossbeam. Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Consectetur voluptates officiis,
+                id eaque nihil voluptatem recusandae saepe temporibus explicabo
+                dolore.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="align-items-center">
+        <div class="container py-3">
           <form method="GET" action="/result.html" id="getResult">
             <div class="row align-items-center mb-md-4 mb-lg-5">
               <div class="col-md-auto text-center">
@@ -187,5 +267,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/result.js"></script>
   </body>
 </html>
