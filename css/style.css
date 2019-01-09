@@ -18,11 +18,17 @@
     height: 100%;
     margin-top: -5rem;
     opacity: 0.1;
-    background-image: url('../img/bg-2.png');
+    background-image: url('../img/bg.png');
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: top 5rem center;
     z-index: -1;
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .fullscreen.bg::after {
+    opacity: 0.07;
   }
 }
 
