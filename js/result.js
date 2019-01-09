@@ -89,21 +89,8 @@
     return (value * percentage) / 100;
   }
 
-  function getData() {
-    const params = new URLSearchParams(window.location.search.slice(1));
-
-    const raise = params.get('raise');
-    const spend = params.get('spend');
-    const sum = Number(params.get('sum'));
-
-    const raiseFrom = window.cities[raise];
-    const spendIn = window.cities[spend];
-
-    return { raiseFrom, spendIn, sum };
-  }
-
   function getPurchasingPowerValue() {
-    const { sum } = getData();
+    const { sum } = window.getDataFromURL();
     const coefficients = [
       ...$('.bar').map((index, bar) => $(bar).data('bar-value'))
     ];
@@ -126,7 +113,7 @@
   }
 
   function renderResult() {
-    const { raiseFrom, spendIn, sum } = getData();
+    const { raiseFrom, spendIn, sum } = window.getDataFromURL();
 
     const purchasingPowerSum = getPurchasingPowerValue();
     // const purchasingPowerCoef = window.barChart.getFormattedValue(

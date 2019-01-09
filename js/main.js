@@ -61,6 +61,21 @@
     WY: 'Wyoming'
   };
 
+  window.getDataFromURL = () => {
+    const params = new URLSearchParams(window.location.search.slice(1));
+
+    if (params.toString()) {
+      const raiseFromKey = params.get('raise');
+      const spendInKey = params.get('spend');
+      const sum = Number(params.get('sum'));
+
+      const raiseFrom = window.cities[raiseFromKey];
+      const spendIn = window.cities[spendInKey];
+
+      return { raiseFromKey, raiseFrom, spendInKey, spendIn, sum };
+    }
+  };
+
   function addCitiesDataToFields(data) {
     function getHTMLTemplate(value, label) {
       return `<option value="${value}">${label}</option>`;
@@ -126,7 +141,17 @@
       }
     });
 
-    $('select.cities-searchfield#spend').selectpicker('val', lastValue);
+    const data = window.getDataFromURL();
+
+    if (data) {
+      const { raiseFromKey, spendInKey, sum } = data;
+
+      $('select.cities-searchfield#raise').selectpicker('val', raiseFromKey);
+      $('select.cities-searchfield#spend').selectpicker('val', spendInKey);
+      $('#sum').val(sum);
+    } else {
+      $('select.cities-searchfield#spend').selectpicker('val', lastValue);
+    }
   }
 
   $(document).ready(() => {
